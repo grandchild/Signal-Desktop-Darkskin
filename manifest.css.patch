@@ -145,7 +145,15 @@
    margin-bottom: 4px;
    padding-bottom: 5px; }
    .conversation-header .avatar {
-@@ -474,7 +477,8 @@
+@@ -450,6 +453,7 @@
+     width: 16px;
+     height: 16px;
+     background: url("/images/x.png") no-repeat center;
++    -webkit-filter: invert(100%);
+     background-size: cover; }
+   input.search::-webkit-search-cancel-button:hover {
+     cursor: pointer; }
+@@ -474,7 +478,8 @@
    .tool-bar input.search::-webkit-input-placeholder {
      color: white; }
    .tool-bar input.search.active, .tool-bar input.search:active, .tool-bar input.search:focus {
@@ -155,7 +163,7 @@
      .tool-bar input.search.active::-webkit-input-placeholder, .tool-bar input.search:active::-webkit-input-placeholder, .tool-bar input.search:focus::-webkit-input-placeholder {
        color: #ccc; }
  
-@@ -497,8 +501,8 @@
+@@ -497,8 +502,8 @@
  
  .index {
    max-width: 1300px;
@@ -166,7 +174,7 @@
    .index .gutter .new-group-update-form {
      display: none;
      padding: 0.5em; }
-@@ -506,7 +510,7 @@
+@@ -506,7 +511,7 @@
      margin: 6px 0;
      font-size: small;
      font-weight: 300;
@@ -175,7 +183,7 @@
    .index .gutter .timestamp {
      position: absolute;
      top: 14px;
-@@ -578,9 +582,9 @@
+@@ -578,9 +583,9 @@
      top: -30px; }
  
  .conversation {
@@ -188,7 +196,7 @@
    border-radius: 10px; }
    .conversation .panel {
      height: 100%; }
-@@ -603,10 +607,10 @@
+@@ -603,10 +608,10 @@
    color: #999; }
  
  .conversation {
@@ -202,7 +210,7 @@
  
  .group-member-list,
  .new-group-update,
-@@ -627,7 +631,7 @@
+@@ -627,7 +632,7 @@
  .message-detail .container {
    height: calc(100% - (36px + 4px)); }
  .message-detail .message-container {
@@ -211,7 +219,7 @@
    padding: 1em 0; }
    .message-detail .message-container .sender {
      display: none; }
-@@ -718,19 +722,20 @@
+@@ -718,19 +723,20 @@
    display: none; }
  
  .sender {
@@ -235,7 +243,7 @@
  .outgoing.entry.sent .status {
    background: url("/images/check-white.png"); }
  .outgoing.entry.delivered .status {
-@@ -763,7 +768,7 @@
+@@ -763,7 +769,7 @@
    .message-detail li,
    .message-list li {
      max-width: 800px;
@@ -244,7 +252,7 @@
      .message-detail li::after,
      .message-list li::after {
        visibility: hidden;
-@@ -778,12 +783,13 @@
+@@ -778,12 +784,13 @@
      left: -2px;
      display: inline-block;
      vertical-align: top;
@@ -263,7 +271,7 @@
      @media (max-width: 900px) {
        .message-detail .bubble,
        .message-list .bubble {
-@@ -794,7 +800,8 @@
+@@ -794,7 +801,8 @@
        white-space: pre-wrap; }
        .message-detail .bubble .content a,
        .message-list .bubble .content a {
@@ -273,7 +281,7 @@
      .message-detail .bubble p,
      .message-list .bubble p {
        margin: 0; }
-@@ -822,8 +829,8 @@
+@@ -822,8 +830,8 @@
      float: left; }
    .message-detail .incoming .bubble,
    .message-list .incoming .bubble {
@@ -284,7 +292,7 @@
      .message-detail .incoming .bubble::before,
      .message-list .incoming .bubble::before {
        left: -10px;
-@@ -832,6 +839,10 @@
+@@ -832,6 +840,10 @@
      .message-list .incoming .bubble::after {
        left: -8px;
        border-right: 8px solid #f3f3f3; }
@@ -295,7 +303,7 @@
    .message-detail .outgoing .avatar, .message-detail .outgoing .bubble,
    .message-list .outgoing .avatar,
    .message-list .outgoing .bubble {
-@@ -840,7 +851,7 @@
+@@ -840,7 +852,7 @@
    .message-list .outgoing .bubble {
      clear: left;
      color: white;
@@ -304,7 +312,7 @@
      .message-detail .outgoing .bubble .meta,
      .message-list .outgoing .bubble .meta {
        color: white; }
-@@ -866,6 +877,11 @@
+@@ -866,6 +878,11 @@
      .message-list .outgoing .bubble .content a::-moz-selection {
        color: #454545;
        background: white; }
@@ -316,7 +324,7 @@
    .message-detail .control .bubble .content,
    .message-list .control .bubble .content {
      font-style: italic; }
-@@ -902,7 +918,7 @@
+@@ -902,7 +919,7 @@
      line-height: 36px; }
    .message-detail .meta,
    .message-list .meta {
@@ -325,7 +333,7 @@
      float: right; }
    .message-detail .end-session,
    .message-list .end-session {
-@@ -939,10 +955,11 @@
+@@ -939,10 +956,11 @@
  .bottom-bar {
    margin-top: 4px;
    height: 36px;

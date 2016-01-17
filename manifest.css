@@ -453,6 +453,7 @@ input.search {
     width: 16px;
     height: 16px;
     background: url("/images/x.png") no-repeat center;
+    -webkit-filter: invert(100%);
     background-size: cover; }
   input.search::-webkit-search-cancel-button:hover {
     cursor: pointer; }
