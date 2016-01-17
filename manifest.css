@@ -103,7 +103,7 @@ button.back {
     right: 0;
     margin: 0;
     padding: 0;
-    border: solid 1px hsla(190,81%,30%,1);
+    border: solid 1px hsla(191,80%,39%,1);
     background-color: black;
     box-shadow: 0 4px 3px 0px hsla(190,81%,10%,0.8); }
     .menu .menu-list li {
@@ -441,7 +441,8 @@ img.emoji {
       line-height: 70px; } }
 
 .menu.conversation-menu button.drop-down {
-  background: url("/images/arrow_drop_down.png") no-repeat center; }
+  background: url("/images/arrow_drop_down.png") no-repeat center;
+  -webkit-filter: invert(100%); }
 
 input.search {
   border: none;
@@ -619,7 +620,7 @@ input.search {
   height: 100%; }
 
 .key-verification {
-  background: white; }
+  background: black; }
   .key-verification p {
     padding: 1em; }
   .key-verification .key {
@@ -945,7 +946,7 @@ input.search {
   padding: 36px; }
   .key-conflict-dialogue .content {
     padding: 1em;
-    background: white;
+    background: black;
     color: black;
     box-shadow: 0 0 5px 0 black; }
   .key-conflict-dialogue .verify {
@@ -1026,11 +1027,12 @@ input.search {
 .confirmation-dialog {
   position: absolute;
   top: 36px;
-  padding: 1em;
-  background: white;
-  border: solid 2px #2090ea; }
+  padding: .7em;
+  background: black;
+  border: solid 2px hsla(191,80%,39%,1); }
   .confirmation-dialog .message {
-    text-align: center; }
+    text-align: center;
+    margin-bottom: 1em; }
   .confirmation-dialog button {
     float: right;
     margin-left: 10px; }
