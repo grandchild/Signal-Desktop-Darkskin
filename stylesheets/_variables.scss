@@ -1,0 +1,56 @@
+// colors
+$blue_l: hsl(192,50%,75%);
+$blue: #1493B3;
+$blue_d: darken($blue, 15%);
+$blue_lt1: rgba($blue, 0.15);
+$blue_lt2: rgba($blue, 0.3);
+$blue_lt3: rgba($blue, 0.66);
+$blue_lt4: rgba($blue, 0.8);
+$grey_l: #2e2e2e;
+$grey_l2: #d9d9d9;
+$grey_l3: darken($grey_l, 20%);
+$grey_l4: darken($grey_l, 40%);
+$grey: #b7b7b7;
+$grey_d: #454545;
+$grey_third: hsl(0, 0%, 33%);
+$grey_16: #101010;
+$white2: hsl(0,0%,95%);
+$white3: hsl(0,0%,85%);
+$dialog-shadow: hsla(0, 0%, 100%, 0.055);
+$black_half: rgba(0, 0, 0, 0.5);
+
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('/fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+$roboto: Roboto, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$roboto-light: Roboto-Light, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+$header-height: 64px;
+$button-height: 24px;
+$header-color: $blue;
+
+$search-height: 36px;
+
+$unread-badge-size: 21px;
+$loading-height: 16px;
+
+$big-avatar-min-width: 900px;
+
+$border-radius: 2px;
+

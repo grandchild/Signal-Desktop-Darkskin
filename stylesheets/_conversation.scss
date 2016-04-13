@@ -1,0 +1,580 @@
+.conversation-title {
+  display: block;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 36px;
+  -webkit-user-select: text;
+}
+.conversation-name + .conversation-number {
+  &:before {
+    content:"\00b7"; // &middot
+    font-weight: bold;
+    padding: 0 5px 0 4px;
+  }
+}
+
+.conversation {
+  background-color: $grey_16;
+  height: 100%;
+
+  .panel {
+    height: calc(100% - #{$header-height});
+    overflow-y: scroll;
+
+    .container {
+      padding-top: 20px;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  }
+  .main.panel {
+    display: flex;
+    flex-direction: column;
+    overflow: initial;
+
+    .discussion-container {
+      flex-grow: 1;
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+
+      .bar-container {
+        height: 5px;
+      }
+
+      .message-list {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 2em 20px 0;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+.key-verification {
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: small;
+  }
+
+  .key, .placeholder {
+    padding: 0 0 1em 0;
+    -webkit-user-select: text;
+  }
+  .key {
+    display: inline-block;
+    font-family: monospace;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: black;
+    border: solid 1px $grey_third;
+    border-radius: $border-radius;
+  }
+  .placeholder {
+    font-weight: bold;
+  }
+}
+
+.message-detail {
+  .key-conflict-dialogue {
+    border-radius: $border-radius;
+    margin: 20px 0;
+
+    .header {
+      border-radius: $border-radius $border-radius 0 0;
+      background: #F3F3A7;
+      margin: 0;
+      padding: 10px 20px
+    }
+    .content {
+      padding: 20px;
+      border: 2px solid #F3F3A7;
+    }
+
+    button.resolve {
+      outline: none;
+      border: none;
+      border-radius: $border-radius;
+      color: white;
+      font-weight: bold;
+      line-height: 36px;
+      padding: 0 20px;
+      float: right;
+      background: $blue;
+      margin-left: 20px;
+    }
+
+    .hideKeys, .showKeys {
+      float: right;
+      line-height: 36px;
+    }
+  }
+
+  .message-container {
+    background: $grey_16;
+    padding: 20px;
+
+    .sender {
+      display: none;
+    }
+  }
+
+  .info {
+    padding: 1em;
+
+    .label {
+      font-weight: bold;
+      padding-right: 1em;
+      vertical-align: top;
+    }
+
+    button {
+      border: none;
+      border-radius: $border-radius;
+      color: white;
+      padding: 0.5em;
+      font-weight: bold;
+
+      span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .contacts .contact-detail {
+    padding: 0 36px;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 1em;
+    padding: 5px;
+  }
+
+  .error-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url('/images/error_red.png') no-repeat center center;
+    vertical-align: middle;
+    position: relative;
+    margin: 9px;
+    float: right;
+
+    .error-message {
+      display: none;
+      position: absolute;
+      background: black;
+      color: white;
+      border-radius: $border-radius;
+      padding: 0.5em;
+      font-weight: normal;
+      bottom: calc(100% + 16px);
+      left: 50%;
+      margin-left: -130px;
+      width: 180px;
+      z-index: 10;
+
+      &:before {
+        left: -10px;
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -23px;
+        left: calc(50% - 6px + 40px);
+        border: 6px solid transparent;
+        border-top: 18px solid #000000;
+      }
+    }
+
+    &:hover .error-message { display: block; }
+  }
+
+  button.conflict {
+    float: right;
+    background: #d00;
+  }
+  button.cancel {
+    float: right;
+    color: $grey_d;
+    border: solid 1px #ccc;
+  }
+}
+.group-update {
+  font-size: smaller;
+}
+
+.private .entry .avatar,
+.private .sender,
+.outgoing .sender {
+  display: none;
+}
+
+.sender {
+  font-size: smaller;
+  opacity: 0.8;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.timestamp {
+  margin-right: 3px;
+}
+
+.message-container,
+.message-list {
+  list-style: none;
+
+  li {
+    max-width: 800px;
+    margin: 0 auto 2px;
+
+    &::after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .bubble {
+    position: relative;
+    left: -2px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px 8px;
+    border-radius: $border-radius;
+    word-wrap: break-word;
+    margin-left: 8px;
+    max-width: 30em;
+
+    @media(max-width: $big-avatar-min-width - 1px) {
+      max-width: calc(100% - 45px); // avatar size + padding
+    }
+
+    .content {
+      -webkit-user-select: text;
+      white-space: pre-wrap;
+
+      a {
+        word-break: break-all
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .meta {
+    font-size: smaller;
+    margin-top: 3px;
+    float: right;
+    line-height: 18px;
+
+    .hasRetry + .timestamp {
+      &:before {
+        content:"\00b7"; // &middot
+        font-weight: bold;
+        padding: 0 5px 0 4px;
+        text-decoration: none;
+        opacity: 0.5;
+      }
+    }
+
+    .retry {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .hasRetry, .timestamp, .status {
+      float: left;
+    }
+
+    .timestamp, .status {
+      cursor: pointer;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+
+  .status {
+    width: 18px;
+    height: 18px;
+  }
+  .sent .status {
+    display: inline-block;
+    @include color-svg('/images/check.svg', white);
+  }
+  .delivered .status {
+    display: inline-block;
+    @include color-svg('/images/double-check.svg', white);
+  }
+  .pending .status {
+    display: inline-block;
+    background: none;
+    &:before { content: '...'; }
+  }
+  .error .status {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    opacity: 1 !important;
+    background: url('/images/error_red.png') center no-repeat;
+    cursor: pointer;
+  }
+
+  .incoming {
+    .avatar, .bubble {
+      float: left;
+    }
+    .bubble {
+      color: white;
+      background-color: $blue;
+
+      .meta {
+        color: white;
+      }
+
+      .content {
+        &::selection, a::selection {
+          color: $grey_d;
+          background: white;
+        }
+
+        &::-moz-selection, a::-moz-selection {
+          color: $grey_d;
+          background: white;
+        }
+      }
+
+      .attachments, .content {
+        a {
+          color: $grey_l;
+        }
+      }
+    }
+    
+    & + .outgoing {
+      margin-top: 4px;
+    }
+  }
+
+  .outgoing {
+
+    .avatar, .bubble {
+      float: right;
+    }
+
+    .bubble {
+      background-color: $grey_l;
+      clear: left;
+    }
+    
+    & + .incoming {
+      margin-top: 4px;
+    }
+  }
+
+  .control {
+    .bubble {
+      margin: 0 3em 1em 3em;
+      background-color: $grey_16 !important;
+      
+      .meta {
+        display: none;
+      }
+      
+      .content {
+        font-style: italic;
+      }
+
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+
+  .attachments {
+    a {
+      font-style: italic;
+      display: block;
+      padding: 1em;
+      background-color: #ccc;
+    }
+
+    img, audio, video {
+      max-width: 100%;
+      max-height: 300px;
+    }
+
+    video {
+      background: black;
+      min-height: 300px;
+    }
+
+    img {
+      cursor: pointer;
+    }
+
+  }
+
+  .outgoing .avatar {
+    display: none;
+  }
+
+  .end-session {
+    font: small;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .bubble .error-message {
+    font-style: italic;
+  }
+
+  .key-conflict {
+    padding: 15px 10px;
+
+    button {
+      margin-top: 5px;
+    }
+  }
+}
+
+.message-list,
+.message-container,
+.key-conflict-dialogue {
+  .avatar {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+  }
+}
+
+.bottom-bar {
+  box-sizing: content-box;
+  $button-width: 36px;
+  padding: 5px;
+  background: $grey_l;
+
+  form.active {
+    outline: solid 1px $blue;
+  }
+
+  form.send {
+    background: $grey_16;
+    padding-bottom: 1px;
+  }
+
+  input, textarea {
+    color: white;
+    background-color: $grey_16;
+  }
+
+  .attachment-previews {
+    padding: 0 36px;
+    .attachment-preview {
+      padding: 13px 10px 0;
+    }
+    img {
+      border: 2px solid #ddd;
+      border-radius: $border-radius;
+      max-height: 100px;
+    }
+
+    .close {
+      position: absolute;
+      top: 5px;
+      right: 2px;
+      background: #999;
+
+      &:hover {
+        background: $grey;
+      }
+    }
+  }
+  .choose-file {
+    float: left;
+    height: 36px;
+  }
+
+  .send-message {
+    display: block;
+    width: calc(100% - #{$button-width});
+    max-height: 100px;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    z-index: 5;
+    resize: none;
+    font-size: 1em;
+    font-family: inherit;
+  }
+}
+
+.toast {
+  position: absolute;
+  bottom: 0;
+  margin: 0 2em 3em;
+  padding: 0.5em 1.5em;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: $border-radius;
+  font-size: small;
+}
+
+.confirmation-dialog {
+  .content {
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 1em;
+    background: $grey_d;
+    border-radius: $border-radius;
+    overflow: auto;
+    box-shadow: 0px 3px 5px 0px $dialog-shadow;
+
+    .message {
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 10px;
+
+      button {
+        float: right;
+        margin-left: 10px;
+        background-color: $grey_16;
+        border-radius: $border-radius;
+        outline: none;
+        padding: 5px 8px;
+        border: 1px solid hsl(0,0%,13%);
+        color: $grey_l2;
+
+        &:focus {
+          border-color: $grey_l4;
+        }
+
+        &:hover {
+          background-color: hsl(0,0%,13%);
+          border-color: $black_half;
+        }
+      }
+    }
+  }
+}
