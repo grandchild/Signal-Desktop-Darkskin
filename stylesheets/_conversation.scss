@@ -120,7 +120,7 @@
 
   .message-container {
     background: $grey_16;
-    padding: 20px;
+    padding: 20px 0;
 
     .sender {
       display: none;
@@ -227,6 +227,7 @@
 
 .timestamp {
   margin-right: 3px;
+  white-space: nowrap;
 }
 
 .message-container,

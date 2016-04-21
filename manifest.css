@@ -94,6 +94,8 @@ button.back {
 ::-webkit-scrollbar-thumb {
   background: #2e2e2e;
   border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #454545; }
 
 .header-buttons {
   height: 0; }
@@ -800,7 +802,7 @@ input.search {
     line-height: 36px; }
 .message-detail .message-container {
   background: #101010;
-  padding: 20px; }
+  padding: 20px 0; }
   .message-detail .message-container .sender {
     display: none; }
 .message-detail .info {
@@ -879,7 +881,8 @@ input.search {
   font-weight: bold; }
 
 .timestamp {
-  margin-right: 3px; }
+  margin-right: 3px;
+  white-space: nowrap; }
 
 .message-container,
 .message-list {

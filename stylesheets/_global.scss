@@ -80,7 +80,12 @@ button.back {
 ::-webkit-scrollbar-thumb {
   background: $grey_l;
   border-radius: $border-radius;
+
+  &:hover {
+    background: $grey_d;
+  }
 }
+
 
 .header-buttons {
   &.left {
