@@ -9,9 +9,9 @@ Installing the skin is easy – Just 2 steps!
 
  OS  | File Location
 --- | -------------
-Linux   | `~/.config/chromium/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.9.0_0/stylesheets/manifest.css`
-Windows | `C:\Users\<Your_User_Name>\AppData\Local\Google\Chrome\User Data\Default\Extensions\bikioccmkafdpakkkcpdbppfkghcmihk\0.9.0_0\stylesheets\manifest.css`
-Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.9.0_0/stylesheets/manifest.css`
+Linux   | `~/.config/chromium/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.11.0_0/stylesheets/manifest.css`
+Windows | `C:\Users\<Your_User_Name>\AppData\Local\Google\Chrome\User Data\Default\Extensions\bikioccmkafdpakkkcpdbppfkghcmihk\0.11.0_0\stylesheets\manifest.css`
+Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.11.0_0/stylesheets/manifest.css`
 
  ![Save As](https://raw.github.com/grandchild/Signal-Desktop-Darkskin/master/img/install.png)
 
