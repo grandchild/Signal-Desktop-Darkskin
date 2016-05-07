@@ -20,7 +20,7 @@ Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioc
  ![Restart](https://raw.github.com/grandchild/Signal-Desktop-Darkskin/master/img/restart.png)
 
 ##### Uninstall
-If you ever want to go back, simply repeat the install steps with the [original `manifest.css`](https://github.com/WhisperSystems/Signal-Desktop/raw/v0.8.0/stylesheets/manifest.css).
+If you ever want to go back, simply repeat the install steps with the [original `manifest.css`](https://github.com/WhisperSystems/Signal-Desktop/raw/v0.11.0/stylesheets/manifest.css).
 
 ##### Updates
 Everytime chrome/ium updates your installation of Signal Desktop it will also replace the CSS file. You will then need to reinstall the Darkskin CSS. If there is an update to Signal Desktop and there happens to be no related [release](https://github.com/grandchild/Signal-Desktop-Darkskin/releases) yet, *please do open an issue about it, if there isn't one yet* and I will get to it.
