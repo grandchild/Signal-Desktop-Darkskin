@@ -280,22 +280,23 @@ img.emoji {
     margin-top: 0; }
   .contact:last-child::after {
     display: none; }
-  .contact .contact-details {
-    vertical-align: middle;
-    display: inline-block;
-    margin: 0 0 0 8px;
-    width: calc(100% - 44px - 8px); }
-    .contact .contact-details p {
-      overflow-x: hidden;
-      text-overflow: ellipsis; }
-  .contact .name {
+
+.contact-details {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0 0 8px;
+  width: calc(100% - 44px - 8px); }
+  .contact-details p {
+    overflow-x: hidden;
+    text-overflow: ellipsis; }
+  .contact-details .name {
     display: block;
     margin: 0;
     font-size: 1em;
     font-weight: 400;
     text-overflow: ellipsis;
     overflow-x: hidden; }
-  .contact .number {
+  .contact-details .number {
     color: #b7b7b7;
     font-size: small; }
 
@@ -563,7 +564,7 @@ input[type=text]:active, input[type=text]:focus, input[type=search]:active, inpu
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
   .conversation-header .avatar {
     margin-bottom: -30px;
-    border: solid 2px white;
+    border: solid 2px #101010;
     z-index: 10;
     width: 48px;
     height: 48px;
@@ -822,42 +823,16 @@ input.search {
 .message-detail .contacts .contact-detail {
   padding: 0 36px;
   margin-bottom: 5px; }
+  .message-detail .contacts .contact-detail .error-icon-container {
+    float: right; }
+  .message-detail .contacts .contact-detail .error-message {
+    margin: 6px 0 0;
+    font-size: small;
+    font-weight: bold;
+    color: #ff1500; }
 .message-detail h3 {
   font-size: 1em;
   padding: 5px; }
-.message-detail .error-icon {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  background: url("/images/error_red.png") no-repeat center center;
-  vertical-align: middle;
-  position: relative;
-  margin: 9px;
-  float: right; }
-  .message-detail .error-icon .error-message {
-    display: none;
-    position: absolute;
-    background: black;
-    color: white;
-    border-radius: 2px;
-    padding: 0.5em;
-    font-weight: normal;
-    bottom: calc(100% + 16px);
-    left: 50%;
-    margin-left: -130px;
-    width: 180px;
-    z-index: 10; }
-    .message-detail .error-icon .error-message:before {
-      left: -10px;
-      display: block;
-      content: '';
-      position: absolute;
-      bottom: -23px;
-      left: calc(50% - 6px + 40px);
-      border: 6px solid transparent;
-      border-top: 18px solid #000000; }
-  .message-detail .error-icon:hover .error-message {
-    display: block; }
 .message-detail button.conflict {
   float: right;
   background: #d00; }
@@ -865,6 +840,52 @@ input.search {
   float: right;
   color: #454545;
   border: solid 1px #ccc; }
+
+.message-list .error-icon {
+  cursor: pointer; }
+
+li.entry .error-icon-container {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 5px);
+  height: 100%; }
+  li.entry .error-icon-container .error-icon {
+    display: block;
+    height: 100%; }
+  li.entry .error-icon-container .error-message {
+    display: none;
+    position: absolute;
+    background: black;
+    color: white;
+    border-radius: 2px;
+    padding: 0.5em;
+    font-weight: normal;
+    bottom: calc(50% + 18px);
+    left: -84px;
+    width: 180px;
+    z-index: 10; }
+    li.entry .error-icon-container .error-message:before {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      border: 6px solid transparent;
+      border-top: 10px solid #000000; }
+  li.entry .error-icon-container:hover .error-message {
+    display: inline-block; }
+
+.error-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  -webkit-mask: url("/images/warning.svg") no-repeat center;
+  -webkit-mask-size: 100%;
+  background-color: red; }
+
+.group li.entry .unregistered-user-error {
+  display: none; }
 
 .group-update {
   font-size: smaller; }
@@ -913,7 +934,7 @@ input.search {
     @media (max-width: 899px) {
       .message-container .bubble,
       .message-list .bubble {
-        max-width: calc(100% - 45px); } }
+        max-width: calc(100% - 45px - 24px); } }
     .message-container .bubble .content,
     .message-list .bubble .content {
       -webkit-user-select: text;
@@ -929,6 +950,7 @@ input.search {
     font-size: smaller;
     margin-top: 3px;
     float: right;
+    text-align: right;
     line-height: 18px; }
     .message-container .meta .hasRetry + .timestamp:before,
     .message-list .meta .hasRetry + .timestamp:before {
@@ -978,16 +1000,6 @@ input.search {
     .message-container .pending .status:before,
     .message-list .pending .status:before {
       content: '...'; }
-  .message-container .error .status,
-  .message-list .error .status {
-    position: relative;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    opacity: 1 !important;
-    background: url("/images/error_red.png") center no-repeat;
-    cursor: pointer;
-    -webkit-mask: none; }
   .message-container .incoming .avatar, .message-container .incoming .bubble,
   .message-list .incoming .avatar,
   .message-list .incoming .bubble {
@@ -1016,6 +1028,10 @@ input.search {
   .message-container .incoming + .outgoing,
   .message-list .incoming + .outgoing {
     margin-top: 4px; }
+  .message-container .outgoing .error-icon-container,
+  .message-list .outgoing .error-icon-container {
+    left: auto;
+    right: calc(100% + 5px); }
   .message-container .outgoing .avatar, .message-container .outgoing .bubble,
   .message-list .outgoing .avatar,
   .message-list .outgoing .bubble {

@@ -310,19 +310,18 @@ $avatar-size: 44px;
   &:last-child::after {
     display: none;
   }
+}
+.contact-details {
+  $left-margin: 8px;
 
-  .contact-details {
-    $left-margin: 8px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 0 0 $left-margin;
+  width: calc(100% - #{$avatar-size} - #{$left-margin});
 
-    vertical-align: middle;
-    display: inline-block;
-    margin: 0 0 0 $left-margin;
-    width: calc(100% - #{$avatar-size} - #{$left-margin});
-
-    p {
-      overflow-x: hidden;
-      text-overflow: ellipsis;
-    }
+  p {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
   }
 
   .name {
@@ -339,6 +338,7 @@ $avatar-size: 44px;
     font-size: small;
   }
 }
+
 
 .recipients-input {
   position: relative;
