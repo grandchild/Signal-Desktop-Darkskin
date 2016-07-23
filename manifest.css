@@ -235,9 +235,6 @@ img.emoji {
   .new-group-update .members .contact .last-message,
   .new-group-update .members .contact .last-timestamp {
     display: none; }
-  .group-member-list .members .contact .number,
-  .new-group-update .members .contact .number {
-    display: none; }
 
 .conversation-list-item {
   cursor: pointer; }
@@ -285,7 +282,8 @@ img.emoji {
   vertical-align: middle;
   display: inline-block;
   margin: 0 0 0 8px;
-  width: calc(100% - 44px - 8px); }
+  width: calc(100% - 44px - 8px);
+  text-align: left; }
   .contact-details p {
     overflow-x: hidden;
     text-overflow: ellipsis; }
@@ -295,7 +293,8 @@ img.emoji {
     font-size: 1em;
     font-weight: 400;
     text-overflow: ellipsis;
-    overflow-x: hidden; }
+    overflow-x: hidden;
+    text-align: left; }
   .contact-details .number {
     color: #b7b7b7;
     font-size: small; }
@@ -511,6 +510,50 @@ input[type=text]:active, input[type=text]:focus, input[type=search]:active, inpu
     background-color: #101010;
     color: white; }
 
+.lightbox.modal {
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .lightbox.modal .content {
+    margin: 0;
+    padding: 0 50px;
+    max-width: 100%;
+    height: 100%;
+    box-shadow: none;
+    background: transparent; }
+    .lightbox.modal .content img {
+      position: absolute;
+      bottom: 0px;
+      display: block;
+      margin: auto;
+      max-width: calc(100% - 100px);
+      max-height: 100%; }
+  .lightbox.modal .controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px; }
+  .lightbox.modal a {
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 3px; }
+    .lightbox.modal a:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%; }
+    .lightbox.modal a:hover {
+      background: #b7b7b7; }
+  .lightbox.modal .save:before {
+    -webkit-mask: url("/images/save.svg") no-repeat center;
+    -webkit-mask-size: 100%;
+    background-color: white; }
+
 .conversation-stack,
 .new-conversation, .inbox, .gutter {
   height: 100%; }
@@ -685,8 +728,9 @@ input.search {
 
 .conversation.placeholder {
   text-align: center;
-  padding: 100px 36px;
-  color: #aaa; }
+  padding: 100px 36px; }
+  .conversation.placeholder h3 {
+    font-size: large; }
 
 .contact.placeholder {
   position: absolute;
@@ -712,6 +756,27 @@ input.search {
   .contact.placeholder:after {
     border-color: transparent transparent #2eace0 transparent;
     top: -30px; }
+
+.syncSettings button {
+  float: right;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px;
+  background: #1493B3;
+  margin-left: 20px;
+  margin-bottom: 20px; }
+  .syncSettings button[disabled=disabled] {
+    background: #b7b7b7; }
+.syncSettings .synced_at {
+  font-size: small;
+  color: #b7b7b7; }
+.syncSettings .sync_failed {
+  display: none;
+  font-size: small;
+  color: red; }
 
 .conversation-title {
   display: block;
@@ -930,7 +995,8 @@ li.entry .error-icon-container {
     border-radius: 2px;
     word-wrap: break-word;
     margin-left: 8px;
-    max-width: 30em; }
+    max-width: 30em;
+    text-align: -webkit-auto; }
     @media (max-width: 899px) {
       .message-container .bubble,
       .message-list .bubble {
@@ -1072,7 +1138,8 @@ li.entry .error-icon-container {
   .message-container .attachments video,
   .message-list .attachments video {
     background: black;
-    min-height: 300px; }
+    min-height: 300px;
+    min-width: 240px; }
   .message-container .attachments img,
   .message-list .attachments img {
     cursor: pointer; }

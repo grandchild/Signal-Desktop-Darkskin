@@ -249,13 +249,8 @@ $avatar-size: 44px;
     .last-message, .last-timestamp {
       display: none;
     }
-
-    .number {
-      display: none;
-    }
   }
 }
-
 .conversation-list-item {
   cursor: pointer;
   &:hover {
@@ -318,6 +313,7 @@ $avatar-size: 44px;
   display: inline-block;
   margin: 0 0 0 $left-margin;
   width: calc(100% - #{$avatar-size} - #{$left-margin});
+  text-align: left;
 
   p {
     overflow-x: hidden;
@@ -331,6 +327,7 @@ $avatar-size: 44px;
     font-weight: 400;
     text-overflow: ellipsis;
     overflow-x: hidden;
+    text-align: left;
   }
 
   .number {
