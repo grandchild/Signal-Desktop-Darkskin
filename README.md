@@ -15,9 +15,9 @@ Installing the skin is easy – Just 2 steps!
 
  OS  | File Location
 --- | -------------
-Linux   | `~/.config/chromium/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.18.0_0/stylesheets/manifest.css`
-Windows | `C:\Users\<Your_User_Name>\AppData\Local\Google\Chrome\User Data\Default\Extensions\bikioccmkafdpakkkcpdbppfkghcmihk\0.18.0_0\stylesheets\manifest.css`
-Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.18.0_0/stylesheets/manifest.css`
+Linux   | `~/.config/chromium/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.19.0_0/stylesheets/manifest.css`
+Windows | `C:\Users\<Your_User_Name>\AppData\Local\Google\Chrome\User Data\Default\Extensions\bikioccmkafdpakkkcpdbppfkghcmihk\0.19.0_0\stylesheets\manifest.css`
+Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioccmkafdpakkkcpdbppfkghcmihk/0.19.0_0/stylesheets/manifest.css`
 
  ![Save As](https://raw.github.com/grandchild/Signal-Desktop-Darkskin/master/img/install.png)
 
@@ -27,7 +27,7 @@ Mac     | `~/Library/Application Support/Google/Chrome/Default/Extensions/bikioc
 
 
 ##### Uninstall
-If you ever want to go back, simply repeat the install steps with the [original `manifest.css`](https://github.com/WhisperSystems/Signal-Desktop/raw/v0.18.0/stylesheets/manifest.css).
+If you ever want to go back, simply repeat the install steps with the [original `manifest.css`](https://github.com/WhisperSystems/Signal-Desktop/raw/v0.19.0/stylesheets/manifest.css).
 
 
 ##### Updates
