@@ -1,6 +1,8 @@
 #### A dark skin for [Signal-Desktop](https://github.com/WhisperSystems/Signal-Desktop)
 ![Preview](https://raw.github.com/grandchild/Signal-Desktop-Darkskin/master/img/screenshot.png)
 
+###### Abandoned, Signal-Desktop has a dark theme now.
+
 It also features some other minor alterations:
 * Tighter look with less distance between elements
 * Slightly smaller elements throughout
